@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're Cute!</title>
+    <link rel="stylesheet" href="p.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hey, you!</h1>
+        <p>You are actually looking really cute in real life! 😊</p>
+        <p>Your smile is absolutely adorable, and your presence makes everything better. ✨</p>
+        <p>Can we go on another date? ❤️</p>
+        <button onclick="alert('Yay! Can’t wait for our next date! ❤️')">Yes, of course!</button>
+    </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        for (let i = 0; i < 30; i++) {
+            let heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(heart);
+        }
+
+        let specialMessage = document.createElement("p");
+        specialMessage.classList.add("special");
+        specialMessage.innerText = "Bhagyashree, you are the most wonderful and kind-hearted person! 🌸\nYour presence lights up my world like a million stars. ✨\nEvery moment with you is a blessing, and I can't wait for our next date! ❤️";
+        document.querySelector(".container").appendChild(specialMessage);
+        
+        let imageContainer = document.createElement("div");
+        imageContainer.classList.add("image-container");
+        imageContainer.innerHTML = `
+            <img src="https://images.pexels.com/photos/840566/pexels-photo-840566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Lovely Moment">
+            <img src="https://images.pexels.com/photos/14568372/pexels-photo-14568372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Romantic Gesture">
+            <img src="https://wallpaperbat.com/img/50609940-sunset-couple-wallpaper.jpg" alt="Beautiful Sunset Date">
+        `;
+        document.querySelector(".container").appendChild(imageContainer);
+    });
+</script>
+
+</html>
