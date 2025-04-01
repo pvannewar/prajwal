@@ -3,43 +3,234 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>You're Cute!</title>
-    <link rel="stylesheet" href="p.css">
-</head>
-<body>
-    <div class="container">
-        <h1>Hey, you!</h1>
-        <p>You are actually looking really cute in real life! 😊</p>
-        <p>Your smile is absolutely adorable, and your presence makes everything better. ✨</p>
-        <p>Can we go on another date? ❤️</p>
-        <button onclick="alert('Yay! Can’t wait for our next date! ❤️')">Yes, of course!</button>
-    </div>
-</body>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        for (let i = 0; i < 30; i++) {
-            let heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.style.left = Math.random() * 100 + "vw";
-            heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
-            document.body.appendChild(heart);
+    <title>Thank You & Testimonials</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
         }
 
-        let specialMessage = document.createElement("p");
-        specialMessage.classList.add("special");
-        specialMessage.innerText = "Bhagyashree, you are the most wonderful and kind-hearted person! 🌸\nYour presence lights up my world like a million stars. ✨\nEvery moment with you is a blessing, and I can't wait for our next date! ❤️";
-        document.querySelector(".container").appendChild(specialMessage);
-        
-        let imageContainer = document.createElement("div");
-        imageContainer.classList.add("image-container");
-        imageContainer.innerHTML = `
-            <img src="https://images.pexels.com/photos/840566/pexels-photo-840566.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Lovely Moment">
-            <img src="https://images.pexels.com/photos/14568372/pexels-photo-14568372.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Romantic Gesture">
-            <img src="https://wallpaperbat.com/img/50609940-sunset-couple-wallpaper.jpg" alt="Beautiful Sunset Date">
-        `;
-        document.querySelector(".container").appendChild(imageContainer);
-    });
-</script>
+        /* Hero Section */
+        .hero {
+            background-color: #FFC72C;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 30px;
+            height: 100vh;
+            color: white;
+        }
 
+        .hero img {
+            max-width: 30%;
+            border-radius: 8px;
+        }
+
+        .hero .text {
+            max-width: 50%;
+            font-size: 30px;
+            font-weight: bold;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            background-color: #f59e42;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: background-color 0.3s ease-in-out;
+            margin-top: 20px;
+        }
+
+        .cta-button:hover {
+            background-color: #d9842f;
+        }
+
+        /* Testimonials Section */
+        .container {
+            padding: 50px 20px;
+            text-align: center;
+            background-color:pink
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #222;
+        }
+
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .carousel-item {
+            display: none;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .carousel-item img {
+            width: 24%;
+            height: 100%;
+        }
+
+        .carousel-text {
+            width: 50%;
+            padding: 20px;
+            text-align: left;
+        }
+
+        .carousel-text h2 {
+            color: #222;
+            font-size: 22px;
+        }
+
+        .carousel-text p {
+            color: #555;
+            font-size: 16px;
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: black;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .prev {
+            left: -40px;
+        }
+
+        .next {
+            right: -40px;
+        }
+
+        .dots {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        .dot {
+            height: 10px;
+            width: 10px;
+            margin: 0 5px;
+            background-color: gray;
+            border-radius: 50%;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <img src="IMG_5424.JPG" alt="Hero Image">
+        <div class="text">
+            <h1>Thank You for Coming into My Life</h1>
+            <p>Your presence fills my life with love, warmth, and endless joy. You are the melody my heart sings, the light that brightens my soul, and the love that makes my journey meaningful.</p>
+            <a href="#messages" class="cta-button">Send a Message</a>
+        </div>
+    </div>
+
+    <!-- Testimonials Section -->
+    <div class="container">
+        <h1>In Radha, Krishna found his soul, and in Krishna, Radha found her eternity.</h1>
+        <div class="carousel">
+            <button class="nav-btn prev" onclick="changeSlide(-1)">&#9664;</button>
+
+            <!-- Carousel Item 1 -->
+            <div class="carousel-item">
+                <img src="IMG_5406.JPG" alt="Testimonial 1">
+                <div class="carousel-text">
+                    <h2>Your smile lights everything up 😊✨</h2>
+                    <p>Woh jo smile hai, bilkul jaise dhoop ki pehli kirnein ho, jo andheron ko roshan kar deti hai. Itni khubsurat aur natural hai ki dekhte hi dil ko ek alag hi sukoon milta hai.</p>
+                </div>
+            </div>
+
+            <!-- Carousel Item 2 -->
+            <div class="carousel-item">
+                <img src="IMG_5425.JPG" alt="Testimonial 2">
+                <div class="carousel-text">
+                    <h2>Aaj Ka Rose Hai Khaas 🌹</h2>
+                    <p>Tere chehre pe jo muskaan hai,
+                        Woh rose ki khushboo jaise jaan hai.
+                        Har pal, har lamha, tu mere saath ho,
+                        Jaise ek khushbu, jo dil mein bas jaaye rooh ke saath ho. 🌹😊</p>
+                </div>
+            </div>
+
+            <!-- Carousel Item 3 -->
+            <div class="carousel-item">
+                <img src="IMG_5410.JPG" alt="Testimonial 3">
+                <div class="carousel-text">
+                    <h2>Saree Mein Teri Khoobsurati 🌸</h2>
+                    <p>Saree ki chaadar, jaise raat ki khushbu,
+                        Tere har ek rang mein kho jaye har shabnam ki wo subah ho.
+                        Tere narmi mein jaise pyaar ki baarish ho,
+                        Saree mein tu, har pal meri khwahish ho. 🌸</p>
+                </div>
+            </div>
+
+            <button class="nav-btn next" onclick="changeSlide(1)">&#9654;</button>
+        </div>
+        <div class="dots">
+            <span class="dot active" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll(".carousel-item");
+        const dots = document.querySelectorAll(".dot");
+        
+        function showSlide(index) {
+            if (index >= slides.length) currentIndex = 0;
+            if (index < 0) currentIndex = slides.length - 1;
+            
+            slides.forEach(slide => slide.style.display = "none");
+            dots.forEach(dot => dot.classList.remove("active"));
+            
+            slides[currentIndex].style.display = "flex";
+            dots[currentIndex].classList.add("active");
+        }
+        
+        function changeSlide(n) {
+            currentIndex += n;
+            showSlide(currentIndex);
+        }
+        
+        function currentSlide(n) {
+            currentIndex = n - 1;
+            showSlide(currentIndex);
+        }
+        
+        showSlide(currentIndex);
+    </script>
+</body>
 </html>
