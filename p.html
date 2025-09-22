@@ -13,45 +13,6 @@
         color: #333;
         overflow-x: hidden;
     }
-    @media (max-width: 768px) {
-    .hero {
-        flex-direction: column;
-        text-align: center;
-        height: auto;
-        padding: 30px 15px;
-    }
-
-    .hero .card-stack {
-        width: 90%;
-        height: auto;
-        margin-bottom: 20px;
-    }
-
-    .hero .text {
-        max-width: 100%;
-        font-size: 22px;
-    }
-
-    .carousel-item {
-        flex-direction: column;
-    }
-
-    .carousel-item img {
-        width: 100%;
-        height: auto;
-    }
-
-    .carousel-text {
-        width: 100%;
-        text-align: center;
-    }
-
-    .nav-btn {
-        top: auto;
-        bottom: -40px;
-    }
-}
-
 
     /* Hero Section */
     .hero {
@@ -68,6 +29,7 @@
         position: relative;
         width: 446px;
         height: 400px;
+        max-width: 100%;
     }
 
     .hero .card-stack img {
@@ -106,6 +68,7 @@
         border-radius: 50px;
         transition: background-color 0.3s ease-in-out;
         margin-top: 20px;
+        display: inline-block;
     }
 
     .cta-button:hover {
@@ -244,6 +207,46 @@
         50% { transform: translateY(-50px) rotate(180deg); }
         100% { transform: translateY(0) rotate(360deg); }
     }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+        .hero {
+            flex-direction: column;
+            text-align: center;
+            height: auto;
+            padding: 30px 15px;
+        }
+
+        .hero .card-stack {
+            width: 90%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .hero .text {
+            max-width: 100%;
+            font-size: 22px;
+        }
+
+        .carousel-item {
+            flex-direction: column;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+        }
+
+        .carousel-text {
+            width: 100%;
+            text-align: center;
+        }
+
+        .nav-btn {
+            top: auto;
+            bottom: -40px;
+        }
+    }
 </style>
 </head>
 <body>
@@ -380,4 +383,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </body>
 </html>
-
