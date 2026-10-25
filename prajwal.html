@@ -3,1244 +3,675 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prajwal ❤️ Shravanii — Our Story</title>
+<meta name="theme-color" content="#16091f">
+<title>Our Little Forever ❤️</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+:root{
+  --pink:#ff8fba;
+  --rose:#ff4f91;
+  --purple:#9b65d9;
+  --cream:#fff1f6;
+  --night:#100817;
 }
-
-html{
-    scroll-behavior:smooth;
-}
-
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%}
 body{
-    font-family:"Segoe UI",sans-serif;
-    background:#050006;
-    color:white;
-    overflow-x:hidden;
+  overflow:hidden;
+  color:#fff;
+  font-family:Georgia,"Times New Roman",serif;
+  background:var(--night);
+}
+button{font:inherit;cursor:pointer}
+button:focus-visible{outline:2px solid white;outline-offset:4px}
+
+#sky{
+  position:fixed;inset:0;overflow:hidden;
+  background:radial-gradient(ellipse at 50% 15%,#48234e 0%,#21102f 42%,#090611 100%);
+}
+#stars{position:absolute;inset:0;pointer-events:none}
+.star{
+  position:absolute;background:#fff;border-radius:50%;
+  animation:twinkle 2s infinite alternate;
+}
+@keyframes twinkle{to{opacity:.12;transform:scale(.45)}}
+
+.moon{
+  position:absolute;right:10%;top:9%;
+  width:75px;height:75px;border-radius:50%;
+  background:#fff1cf;
+  box-shadow:0 0 25px #fff0c7,0 0 75px #ffc7df50;
+  animation:moonGlow 4s ease-in-out infinite alternate;
+}
+@keyframes moonGlow{
+  to{box-shadow:0 0 40px #fff0c7,0 0 110px #ffc7df90}
+}
+.horizon{
+  position:absolute;bottom:0;width:100%;height:20%;
+  background:linear-gradient(transparent,#171020);
+  pointer-events:none;
 }
 
-/* ===== BACKGROUND ===== */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    z-index:-5;
-    background:
-        radial-gradient(circle at 15% 20%,rgba(255,0,100,.22),transparent 30%),
-        radial-gradient(circle at 85% 75%,rgba(155,0,255,.20),transparent 30%),
-        linear-gradient(135deg,#050006,#18000e,#050006);
+.page{
+  position:absolute;inset:0;
+  display:none;overflow-y:auto;
+  align-items:center;justify-content:center;
+  flex-direction:column;text-align:center;
+  padding:30px 16px 100px;
+  opacity:0;
 }
-
-/* ===== FLOATING HEARTS ===== */
-
-.floating-heart{
-    position:fixed;
-    bottom:-50px;
-    pointer-events:none;
-    z-index:30;
-    color:#ff176f;
-    text-shadow:0 0 15px #ff176f;
-    animation:floatUp linear forwards;
+.page.active{display:flex;animation:pageIn .65s ease forwards}
+@keyframes pageIn{to{opacity:1}}
+.page-inner{width:min(100%,680px);margin:auto}
+.glass{
+  padding:clamp(19px,4vw,34px);
+  border:1px solid #ffbad552;
+  border-radius:26px;
+  background:#ffffff0b;
+  box-shadow:0 0 38px #ff5d9b15,inset 0 0 30px #ffffff05;
+  backdrop-filter:blur(9px);
 }
+h1{
+  font-size:clamp(2rem,7vw,4.2rem);
+  color:#ffc1d9;
+  text-shadow:0 0 25px #ff4f91a8;
+  margin:12px 0;
+}
+h2{color:#ffc2d9;font-size:clamp(1.2rem,4vw,1.8rem)}
+h3{color:#ffbad3}
+p{font-size:clamp(1rem,2.5vw,1.12rem);line-height:1.75}
+.small{font-size:.88rem;color:#eac8da}
+.eyebrow{
+  text-transform:uppercase;letter-spacing:4px;
+  color:#ffd7e7;font-size:.72rem;
+}
+.btn{
+  border:0;border-radius:30px;padding:13px 21px;margin:5px;
+  color:white;background:linear-gradient(135deg,#ff609f,#a665db);
+  box-shadow:0 6px 22px #ff4f9130;
+  transition:transform .2s,filter .2s;
+}
+.btn:hover{transform:translateY(-2px);filter:brightness(1.12)}
+.btn.secondary{background:#ffffff0d;border:1px solid #ffffff44;box-shadow:none}
+.btn:active{transform:scale(.97)}
+.actions{margin-top:14px;display:flex;flex-wrap:wrap;justify-content:center;gap:4px}
 
+/* Shared romantic effects */
+.heart{
+  position:fixed;bottom:-45px;pointer-events:none;z-index:5;
+  animation:floatUp linear forwards;
+}
 @keyframes floatUp{
-    0%{
-        transform:translateY(0) scale(.5) rotate(0);
-        opacity:0;
-    }
-    15%{
-        opacity:1;
-    }
-    100%{
-        transform:translateY(-110vh) scale(1.5) rotate(360deg);
-        opacity:0;
-    }
-}
-
-/* ===== LOCK SCREEN ===== */
-
-#lockScreen{
-    position:fixed;
-    inset:0;
-    z-index:100;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:
-        radial-gradient(circle,rgba(255,0,100,.20),transparent 35%),
-        #040004;
-    transition:1.2s;
-}
-
-.lock-content{
-    width:min(92%,600px);
-}
-
-.lock-badge{
-    color:#ff6fa5;
-    letter-spacing:5px;
-    font-size:.75rem;
-    text-transform:uppercase;
-    margin-bottom:18px;
-}
-
-.lock-title{
-    font-size:clamp(2rem,7vw,4rem);
-    line-height:1.05;
-    text-shadow:0 0 30px rgba(255,23,111,.8);
-}
-
-.lock-title span{
-    color:#ff4d91;
-}
-
-.lock-subtitle{
-    color:#ffc1d7;
-    margin-top:15px;
-    margin-bottom:30px;
-}
-
-.heart-button{
-    width:180px;
-    height:180px;
-    border:0;
-    outline:0;
-    background:transparent;
-    cursor:pointer;
-}
-
-.big-heart{
-    display:block;
-    font-size:125px;
-    animation:heartbeat 1.2s infinite;
-    filter:drop-shadow(0 0 15px #ff176f);
-    transition:.4s;
-}
-
-.heart-button:hover .big-heart{
-    transform:scale(1.2);
-    filter:drop-shadow(0 0 45px #ff176f);
-}
-
-@keyframes heartbeat{
-    0%,100%{transform:scale(1)}
-    15%{transform:scale(1.18)}
-    30%{transform:scale(1)}
-    45%{transform:scale(1.1)}
-}
-
-.click-text{
-    color:#ffb3cb;
-    margin-top:5px;
-    animation:blink 1.5s infinite;
-}
-
-@keyframes blink{
-    50%{opacity:.4}
-}
-
-/* ===== PASSWORD ===== */
-
-#passwordBox{
-    position:fixed;
-    inset:0;
-    z-index:200;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    padding:20px;
-    background:rgba(0,0,0,.84);
-    backdrop-filter:blur(15px);
-}
-
-.password-card{
-    width:min(430px,100%);
-    padding:42px 30px;
-    border-radius:30px;
-    text-align:center;
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,20,110,.18),
-            rgba(100,0,100,.18)
-        );
-    border:1px solid rgba(255,100,170,.35);
-    box-shadow:
-        0 0 50px rgba(255,0,100,.25),
-        inset 0 0 30px rgba(255,0,100,.06);
-    animation:modalIn .6s ease;
-}
-
-@keyframes modalIn{
-    from{
-        opacity:0;
-        transform:scale(.7) translateY(40px);
-    }
-    to{
-        opacity:1;
-        transform:scale(1) translateY(0);
-    }
-}
-
-.password-heart{
-    font-size:45px;
-    margin-bottom:12px;
-}
-
-.password-card h2{
-    font-size:2rem;
-}
-
-.hint{
-    color:#ff9fc1;
-    margin:12px 0 25px;
-}
-
-#passwordInput{
-    width:100%;
-    padding:16px;
-    border-radius:15px;
-    border:1px solid #ff4f91;
-    outline:none;
-    background:rgba(0,0,0,.5);
-    color:white;
-    font-size:1.25rem;
-    text-align:center;
-    letter-spacing:8px;
-    margin-bottom:15px;
-}
-
-#passwordInput:focus{
-    box-shadow:0 0 25px rgba(255,23,111,.5);
-}
-
-.unlock-button{
-    width:100%;
-    padding:16px;
-    border:0;
-    border-radius:15px;
-    color:white;
-    font-weight:bold;
-    font-size:1rem;
-    cursor:pointer;
-    background:linear-gradient(90deg,#ff176f,#9b00ff);
-    transition:.3s;
-}
-
-.unlock-button:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 35px rgba(255,0,130,.4);
-}
-
-#errorMessage{
-    min-height:24px;
-    margin-top:12px;
-    color:#ff668d;
-}
-
-.shake{
-    animation:shake .45s;
-}
-
-@keyframes shake{
-    20%{transform:translateX(-10px)}
-    40%{transform:translateX(10px)}
-    60%{transform:translateX(-8px)}
-    80%{transform:translateX(8px)}
-}
-
-/* ===== UNLOCK ===== */
-
-#unlockAnimation{
-    position:fixed;
-    inset:0;
-    z-index:1000;
-    display:none;
-    justify-content:center;
-    align-items:center;
-    background:#ff176f;
-}
-
-.unlock-heart{
-    font-size:100px;
-    animation:unlockHeart 1.5s forwards;
-}
-
-@keyframes unlockHeart{
-    0%{transform:scale(1)}
-    50%{transform:scale(3)}
-    100%{
-        transform:scale(35);
-        opacity:0;
-    }
-}
-
-/* ===== WEBSITE ===== */
-
-#website{
-    display:none;
-}
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:50;
-    display:flex;
-    justify-content:center;
-    flex-wrap:wrap;
-    gap:8px;
-    padding:14px;
-    background:rgba(5,0,5,.72);
-    backdrop-filter:blur(15px);
-    border-bottom:1px solid rgba(255,100,170,.15);
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    padding:10px 17px;
-    border-radius:50px;
-    transition:.3s;
-}
-
-nav a:hover{
-    background:#ff176f;
-    box-shadow:0 0 20px rgba(255,23,111,.6);
-    transform:translateY(-2px);
-}
-
-/* ===== HERO ===== */
-
-header{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:30px;
-}
-
-.hero{
-    max-width:1000px;
-}
-
-.hero-small{
-    color:#ff78a9;
-    letter-spacing:6px;
-    text-transform:uppercase;
-    font-size:.8rem;
-}
-
-.hero-heart{
-    font-size:90px;
-    margin:20px;
-    animation:heartbeat 1.3s infinite;
-    filter:drop-shadow(0 0 25px #ff176f);
-}
-
-.hero h1{
-    font-size:clamp(3.5rem,11vw,8rem);
-    line-height:.9;
-    margin:15px 0 25px;
-    background:linear-gradient(
-        90deg,
-        #fff,
-        #ff5e9d,
-        #fff,
-        #c158ff
-    );
-    background-size:300%;
-    -webkit-background-clip:text;
-    color:transparent;
-    animation:gradientMove 5s infinite;
-}
-
-@keyframes gradientMove{
-    0%{background-position:0%}
-    50%{background-position:100%}
-    100%{background-position:0%}
-}
-
-.hero p{
-    color:#ffc2d8;
-    font-size:1.25rem;
-}
-
-.hero-date{
-    display:inline-block;
-    margin-top:25px;
-    padding:10px 20px;
-    border:1px solid rgba(255,100,170,.3);
-    border-radius:50px;
-    color:#ff8db4;
-}
-
-/* ===== SECTIONS ===== */
-
-section{
-    min-height:100vh;
-    padding:100px 7%;
-}
-
-.section-kicker{
-    text-align:center;
-    color:#ff4d91;
-    text-transform:uppercase;
-    letter-spacing:4px;
-    font-size:.75rem;
-    margin-bottom:10px;
-}
-
-.section-title{
-    text-align:center;
-    font-size:clamp(2.3rem,6vw,4.5rem);
-    margin-bottom:60px;
-    color:#ff91b8;
-    text-shadow:0 0 20px rgba(255,23,111,.5);
-}
-
-/* ===== MEMORIES ===== */
-
-.photo-grid{
-    max-width:1200px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.photo-card{
-    position:relative;
-    height:430px;
-    overflow:hidden;
-    border-radius:25px;
-    cursor:pointer;
-    background:#15000f;
-    border:1px solid rgba(255,100,170,.2);
-    transition:.5s;
-}
-
-.photo-card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:1s;
-}
-
-.photo-card::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(
-        transparent 35%,
-        rgba(0,0,0,.9)
-    );
-}
-
-.photo-card:hover{
-    transform:translateY(-15px);
-    box-shadow:
-        0 25px 60px rgba(255,0,110,.3),
-        0 0 30px rgba(255,0,110,.15);
-}
-
-.photo-card:hover img{
-    transform:scale(1.15);
-}
-
-.photo-caption{
-    position:absolute;
-    z-index:2;
-    bottom:20px;
-    left:20px;
-    right:20px;
-}
-
-.photo-caption h3{
-    font-size:1.4rem;
-}
-
-.photo-caption p{
-    margin-top:6px;
-    color:#ffb8cf;
-}
-
-/* ===== STORY ===== */
-
-.timeline{
-    max-width:850px;
-    margin:auto;
-    border-left:2px solid #ff176f;
-    padding-left:30px;
-}
-
-.timeline-item{
-    margin-bottom:40px;
-    padding:28px;
-    border-radius:22px;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,100,170,.1);
-    transition:.4s;
-}
-
-.timeline-item:hover{
-    transform:translateX(12px);
-    background:rgba(255,23,111,.08);
-    box-shadow:0 0 30px rgba(255,23,111,.12);
-}
-
-.timeline-item span{
-    color:#ff4d91;
-    font-size:.8rem;
-    letter-spacing:3px;
-}
-
-.timeline-item h3{
-    color:#ff8ab4;
-    margin:8px 0;
-    font-size:1.5rem;
-}
-
-.video-frame {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.video-frame video {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-/* ===== LETTER ===== */
-
-.letter{
-    max-width:850px;
-    margin:auto;
-    padding:55px;
-    border-radius:30px;
-    background:rgba(255,255,255,.04);
-    border:1px solid rgba(255,100,170,.2);
-    box-shadow:0 0 50px rgba(255,0,100,.08);
-    line-height:1.9;
-    color:#ffd6e4;
-    font-size:1.1rem;
-}
-
-.signature{
-    margin-top:25px;
-    color:#ff6fa5;
-    font-size:1.3rem;
-}
-
-/* ===== FOREVER ===== */
-
-.final{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
-
-.final h2{
-    font-size:clamp(3rem,10vw,8rem);
-    background:linear-gradient(
-        90deg,
-        #ff176f,
-        white,
-        #c14dff
-    );
-    -webkit-background-clip:text;
-    color:transparent;
-}
-
-.final p{
-    margin-top:20px;
-    color:#ffb5cf;
-    font-size:1.2rem;
-}
-
-.forever-names{
-    margin-top:25px;
-    color:#ff6fa5;
-    font-size:1.4rem;
-}
-
-/* ===== MOBILE ===== */
-
-@media(max-width:800px){
-
-    .photo-grid{
-        grid-template-columns:1fr;
-    }
-
-    .photo-card{
-        height:450px;
-    }
-
-    section{
-        padding:80px 5%;
-    }
-
-    .letter{
-        padding:30px 22px;
-    }
-
-    nav a{
-        padding:8px 12px;
-        font-size:.85rem;
-    }
+  0%{transform:translateY(0) rotate(0);opacity:0}
+  10%{opacity:.9}
+  100%{transform:translateY(-115vh) rotate(35deg);opacity:0}
+}
+.sparkle{
+  position:absolute;color:#fff0d4;
+  animation:sparkle 3s ease-in-out infinite;
+}
+@keyframes sparkle{50%{opacity:.2;transform:scale(.6)}}
+
+/* Page 1: four lilies growing from one root */
+.garden{
+  width:min(100%,430px);height:250px;
+  margin:10px auto 0;position:relative;
+}
+.soil{
+  position:absolute;bottom:12px;left:50%;transform:translateX(-50%);
+  width:135px;height:17px;border-radius:50%;
+  background:#654456;box-shadow:0 0 18px #ff90bb40;
+}
+.stem{
+  position:absolute;left:50%;bottom:20px;
+  width:5px;height:0;border-radius:10px;
+  background:linear-gradient(#b5f3ae,#3b8a62);
+  transform-origin:bottom;
+  animation:growStem 2s ease-out forwards;
+}
+.stem.one{transform:rotate(-38deg);--height:145px}
+.stem.two{transform:rotate(-14deg);--height:180px;animation-delay:.3s}
+.stem.three{transform:rotate(14deg);--height:180px;animation-delay:.6s}
+.stem.four{transform:rotate(38deg);--height:145px;animation-delay:.9s}
+@keyframes growStem{to{height:var(--height)}}
+.flower{
+  position:absolute;left:-22px;top:-31px;font-size:43px;
+  opacity:0;transform:scale(.1);
+  animation:bloom 1s 1.6s ease-out forwards;
+  filter:drop-shadow(0 0 12px #ff9bc8);
+}
+.two .flower{animation-delay:1.9s}
+.three .flower{animation-delay:2.2s}
+.four .flower{animation-delay:2.5s}
+
+/* Movie scene: two couples */
+.movie-scene{
+  position:relative;overflow:hidden;
+  min-height:280px;border-radius:22px;
+  border:1px solid #ffc1dd35;
+  background:linear-gradient(180deg,#120d2b 0%,#392044 55%,#181020 100%);
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding:20px 10px 15px;margin:15px 0;
+}
+.movie-scene:before{
+  content:"";position:absolute;top:25px;left:50%;
+  width:80px;height:80px;border-radius:50%;
+  transform:translateX(-50%);
+  background:#ffe8bd;box-shadow:0 0 40px #ffdda2a8;
+}
+.movie-scene:after{
+  content:"";position:absolute;left:0;right:0;bottom:0;height:40%;
+  background:linear-gradient(transparent,#0c0814);
+}
+.scene-stars{position:absolute;inset:0;pointer-events:none}
+.scene-couples{
+  position:relative;z-index:2;
+  display:flex;align-items:flex-end;justify-content:center;
+  gap:clamp(5px,3vw,25px);
+}
+.couple{
+  display:flex;align-items:center;justify-content:center;
+  position:relative;gap:0;min-width:0;
+}
+.person{
+  font-size:clamp(2.6rem,10vw,5rem);
+  display:inline-block;
+  filter:drop-shadow(0 0 10px #ff83b4a0);
+  animation:sway 2.4s ease-in-out infinite alternate;
+}
+.person:nth-child(2){animation-delay:.4s}
+.couple:nth-child(2) .person{animation-delay:.7s}
+.kiss{
+  position:absolute;top:-23px;left:50%;
+  transform:translateX(-50%);
+  font-size:1.7rem;
+  animation:kissGlow 1.6s infinite;
+}
+@keyframes kissGlow{50%{transform:translateX(-50%) scale(1.35)}}
+@keyframes sway{to{transform:translateY(-7px) rotate(4deg)}}
+.scene-caption{position:relative;z-index:3;color:#ffe4ef;font-style:italic}
+.rain{
+  position:absolute;inset:-40px 0 0;pointer-events:none;
+  background-image:repeating-linear-gradient(105deg,transparent 0 28px,#b5d8ff30 29px,#b5d8ff30 30px,transparent 31px 55px);
+  animation:rainFall .7s linear infinite;
+  opacity:.5;
+}
+@keyframes rainFall{to{background-position:0 55px}}
+
+/* Love Airlines */
+.pass{
+  border:2px dashed #ffb7d4;border-radius:18px;
+  padding:18px;text-align:left;background:#ffb7d40c;
+}
+.pass p{margin:9px 0}
+.bike-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:18px}
+.bike{
+  min-width:0;overflow:hidden;padding:12px;
+  border:1px solid #ffffff2b;border-radius:18px;background:#ffffff09;
+}
+.bike img{
+  width:100%;height:135px;object-fit:contain;
+  border-radius:12px;background:#ffffff08;
+}
+.bike .fallback{font-size:3.5rem}
+.bike h3{font-size:1rem;overflow-wrap:anywhere}
+
+/* Letters, messages, promise */
+.letter{text-align:left}
+.promise{text-align:left;padding:11px;border-bottom:1px solid #ffffff1b;line-height:1.6}
+.note-number{font-size:.9rem;letter-spacing:2px;color:#ffc1d9}
+.note-message{min-height:95px;display:flex;align-items:center;justify-content:center}
+#musicStatus{position:fixed;top:10px;left:12px;z-index:30;font-size:.75rem;color:#ffd9e9}
+.progress{position:fixed;top:0;left:0;width:100%;height:3px;z-index:40;background:#ffffff13}
+#progressFill{height:100%;width:14.28%;background:#ff88b6;transition:width .3s}
+.nav{
+  position:fixed;bottom:10px;left:0;right:0;z-index:30;
+  display:flex;justify-content:center;align-items:center;
+  flex-wrap:wrap;gap:3px;padding:0 5px;
+}
+.nav .btn{padding:10px 15px;font-size:.85rem}
+input{
+  width:100%;padding:13px;border-radius:12px;
+  border:1px solid #ffb6d2;background:#fff;color:#442238;
+}
+@keyframes bloom{to{opacity:1;transform:scale(1.2)}}
+
+@media(max-width:480px){
+  .page{padding:22px 12px 94px}
+  .glass{padding:18px 14px}
+  .garden{height:225px;transform:scale(.94);transform-origin:top center;margin-bottom:-8px}
+  .bike img{height:100px}
+  .nav .btn{padding:10px 11px;margin:2px;font-size:.78rem}
+  .movie-scene{min-height:245px}
+  .moon{width:52px;height:52px;right:8%;top:8%}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
 }
 </style>
 </head>
 
 <body>
+<div id="sky">
+  <div id="stars"></div>
+  <div class="moon"></div>
+  <div class="horizon"></div>
+</div>
 
-<!-- =========================
-     SECRET ENTRY
-========================= -->
+<div class="progress"><div id="progressFill"></div></div>
+<div id="musicStatus">♫ Music: tap to play</div>
 
-<div id="lockScreen">
+<!-- Add your music file in this folder. Rename it love-song.mp3 -->
+<audio id="music" loop preload="none">
+  <source src="love-song.mp3" type="audio/mpeg">
+</audio>
 
-    <div class="lock-content">
+<!-- PAGE 1 -->
+<section class="page active" id="p1">
+  <div class="page-inner glass">
+    <div class="eyebrow">A little universe made for you</div>
+    <div style="font-size:2rem;margin-top:10px">🌙 ✨ 💗 ✨ 🌙</div>
+    <h1>For My Tanushree</h1>
+    <p>In a sky full of stars, my heart still finds its way to you.</p>
 
-        <div class="lock-badge">
-            A Secret Made With Love
-        </div>
-
-        <div class="lock-title">
-            <span>Prajwal</span> ❤️ <span>Shravanii</span>
-        </div>
-
-        <p class="lock-subtitle">
-            A little universe made for two hearts...
-        </p>
-
-        <button class="heart-button" id="heartButton">
-            <span class="big-heart">❤️</span>
-        </button>
-
-        <p class="click-text">
-            Tap our heart to enter
-        </p>
-
+    <div class="garden" aria-label="Four animated lilies growing from one root">
+      <div class="soil"></div>
+      <div class="stem one"><span class="flower">🌷</span></div>
+      <div class="stem two"><span class="flower">🌷</span></div>
+      <div class="stem three"><span class="flower">🌷</span></div>
+      <div class="stem four"><span class="flower">🌷</span></div>
     </div>
 
-</div>
+    <h2>Four lilies. One root. One beautiful story. 🌷</h2>
+    <p>May our love keep growing, even when the world feels quiet.</p>
+    <div style="font-size:2rem">🧸 Dudu <span style="color:#ffb5d2">♡</span> Bubu 🐻</div>
+    <p class="small">A tiny beginning to a story made with love.</p>
+    <div class="actions"><button class="btn" onclick="goTo(2)">Open Our Story 💌</button></div>
+  </div>
+</section>
 
+<!-- PAGE 2 -->
+<section class="page" id="p2">
+  <div class="page-inner glass">
+    <div style="font-size:3.5rem">💌</div>
+    <div class="eyebrow">A question from my heart</div>
+    <h1>Tanushree…</h1>
+    <p>If I could choose one person to laugh with, support, annoy a little, and love through life's unexpected chapters…</p>
+    <h2>Would you let me keep choosing you? 🥹</h2>
+    <div class="actions">
+      <button class="btn" onclick="answerYes()">YES, ALWAYS 💗</button>
+      <button class="btn secondary" onclick="showThink()">Let me think 🙈</button>
+    </div>
+    <p id="answerMessage" aria-live="polite"></p>
+  </div>
+</section>
 
-<!-- =========================
-     PASSWORD
-========================= -->
+<!-- PAGE 3 -->
+<section class="page" id="p3">
+  <div class="page-inner glass">
+    <div class="eyebrow">Our cinematic love story</div>
+    <h1>One Movie. Two Couples. One Feeling. 🎬</h1>
+    <div class="movie-scene">
+      <div class="scene-stars" id="sceneStars"></div>
+      <div class="rain"></div>
+      <div class="scene-couples">
+        <div class="couple">
+          <span class="person">🧸</span><span class="person">🐻</span>
+          <span class="kiss">💋</span>
+        </div>
+        <div class="couple">
+          <span class="person">👩🏻</span><span class="person">👨🏻</span>
+          <span class="kiss">💗</span>
+        </div>
+      </div>
+      <div class="scene-caption">Under the same moon, two love stories glow.</div>
+    </div>
+    <h2>Welcome to our little forever.</h2>
+    <p>You make ordinary moments feel like the most beautiful scene in my favourite movie.</p>
+    <p>Even after the music fades and the screen goes dark, the feeling stays.</p>
+  </div>
+</section>
 
-<div id="passwordBox">
+<!-- PAGE 4 -->
+<section class="page" id="p4">
+  <div class="page-inner glass">
+    <div style="font-size:3rem">🌹💌</div>
+    <div class="eyebrow">Words I want you to keep</div>
+    <h1>A Letter For You</h1>
+    <div class="letter">
+      <p>My dearest Tanushree,</p>
+      <p>If love were a journey, I would happily take every detour just to spend a little more time with you.</p>
+      <p>I want to celebrate your dreams, listen when your days feel heavy, cheer for every little victory, and remind you that you never have to be perfect to be loved.</p>
+      <p>I hope you always feel free to be yourself around me. I hope we can laugh at silly things, speak honestly when something hurts, and learn how to understand each other a little better every day.</p>
+      <p>Your ambitions matter. Your peace matters. Your happiness matters. And the little things that make you uniquely you are worth celebrating.</p>
+      <p>No grand promise can replace daily kindness. So I hope I can show you love in the small things: in patience, respect, effort, and the choice to keep showing up.</p>
+      <p>Whenever you look at the moon, imagine a little smile travelling your way. 🌙</p>
+      <p>With all the affection this little page can hold,<br><b>Your favourite person ❤️</b></p>
+    </div>
+  </div>
+</section>
 
-    <div class="password-card" id="passwordCard">
+<!-- PAGE 5 -->
+<section class="page" id="p5">
+  <div class="page-inner glass">
+    <div style="font-size:3rem">✈️💗</div>
+    <div class="eyebrow">Special romantic flight</div>
+    <h1>Love Airlines</h1>
+    <p>Your boarding pass to a destination called <b>FOREVER</b>.</p>
 
-        <div class="password-heart">💖</div>
-
-        <h2>
-            Welcome, Shravanii ❤️
-        </h2>
-
-        <p class="hint">
-            Hint: MY DOB(DDMM)
-        </p>
-
-        <input
-            id="passwordInput"
-            type="password"
-            maxlength="4"
-            inputmode="numeric"
-            placeholder="••••"
-        >
-
-        <button
-            class="unlock-button"
-            id="unlockButton">
-            Unlock Prajwal & Shravanii's Story
-        </button>
-
-        <div id="errorMessage"></div>
-
+    <div class="pass">
+      <h3>✈️ LOVE AIRLINES — BOARDING PASS</h3>
+      <p><b>PASSENGER:</b> TANUSHREE</p>
+      <p><b>DEPARTURE:</b> Two Separate Worlds</p>
+      <p><b>DESTINATION:</b> Our Little Forever</p>
+      <p><b>SEAT:</b> Beside Me 💗</p>
+      <p><b>FLIGHT:</b> LOVE-∞</p>
+      <p><b>BOARDING:</b> Whenever You Smile</p>
+      <p><b>STATUS:</b> My Favourite Person</p>
     </div>
 
-</div>
+    <h2>Our dream ride 🏍️</h2>
+    <div class="bike-grid">
+      <div class="bike">
+        <img src="Rio.webp" alt="Hunter Rio White motorcycle" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="fallback" style="display:none">🏍️</div>
+        <h3>Hunter Rio White</h3>
+        <p class="small">A moonlit ride with you.</p>
+      </div>
+      <div class="bike">
+        <img src="tokoyo.webp" alt="Hunter Tokyo Black motorcycle" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+        <div class="fallback" style="display:none">🏍️</div>
+        <h3>Hunter Tokyo Black</h3>
+        <p class="small">A midnight escape together.</p>
+      </div>
+    </div>
+    <p class="small">Air-hostess rule: the destination is lovely, but the company makes the journey. ✈️</p>
+  </div>
+</section>
 
+<!-- PAGE 6 -->
+<section class="page" id="p6">
+  <div class="page-inner glass">
+    <div style="font-size:3rem">🥺💗</div>
+    <div class="eyebrow">Open one whenever you miss me</div>
+    <h1>100 Little Miss-You Notes</h1>
+    <div class="card-note">
+      <div class="note-number" id="missCount">NOTE 1 OF 100</div>
+      <div class="note-message"><p id="missText">I miss your smile even when I have only just seen it.</p></div>
+    </div>
+    <div class="actions">
+      <button class="btn" onclick="nextMiss()">Next Little Note 💌</button>
+      <button class="btn secondary" onclick="copyMiss()">Copy Note</button>
+    </div>
+    <p class="small">A hundred tiny reminders that someone is thinking of you.</p>
+  </div>
+</section>
 
-<!-- =========================
-     UNLOCK EFFECT
-========================= -->
+<!-- PAGE 7 -->
+<section class="page" id="p7">
+  <div class="page-inner glass">
+    <div style="font-size:3rem">💖🌹✨</div>
+    <div class="eyebrow">The things I hope to give you</div>
+    <h1>My Promises to You</h1>
 
-<div id="unlockAnimation">
-    <div class="unlock-heart">❤️</div>
-</div>
+    <div class="promise">🌷 I promise to respect your dreams, choices, and independence.</div>
+    <div class="promise">🫶 I promise to listen with care, even when conversations are difficult.</div>
+    <div class="promise">✈️ I promise to celebrate your courage and every achievement.</div>
+    <div class="promise">🌙 I promise to be honest, patient, and kind.</div>
+    <div class="promise">💗 I promise to remember that actions matter more than big words.</div>
+    <div class="promise">🌸 I promise to make space for laughter, friendship, and new memories.</div>
+    <div class="promise">🤍 I promise to respect your boundaries and appreciate the person you are.</div>
 
+    <h2 style="margin-top:25px">One last surprise… 🎁</h2>
+    <button class="btn" onclick="openSurprise()">Open Your Surprise</button>
+    <div id="surprise" style="display:none">
+      <h1>It's You. Always You. ❤️</h1>
+      <div class="movie-scene">
+        <div class="scene-couples">
+          <div class="couple"><span class="person">🧸</span><span class="person">🐻</span><span class="kiss">💋</span></div>
+        </div>
+        <div class="scene-caption">Our favourite story is the one we keep writing.</div>
+      </div>
+      <p>If I could replay one feeling, it would be the happiness of knowing you.</p>
+      <h2>End scene… or our beginning? 💞</h2>
+      <button class="btn" onclick="goTo(1)">Watch Our Story Again ↻</button>
+    </div>
+  </div>
+</section>
 
-<!-- =========================
-     MAIN WEBSITE
-========================= -->
-
-<div id="website">
-
-<nav>
-    <a href="#home">Home</a>
-    <a href="#memories">Memories</a>
-    <a href="#story">Our Story</a>
-    <a href="#letter">For You</a>
-    <a href="#forever">Forever</a>
+<nav class="nav" aria-label="Page navigation">
+  <button class="btn secondary" onclick="move(-1)">← Back</button>
+  <button class="btn" id="nextButton" onclick="move(1)">Next 💗</button>
+  <button class="btn secondary" id="musicButton" onclick="toggleMusic()">♫ Music</button>
 </nav>
 
-
-<!-- HOME -->
-
-<header id="home">
-
-    <div class="hero">
-
-        <div class="hero-small">
-            A Story Written By Two Hearts
-        </div>
-
-        <div class="hero-heart">
-            ❤️
-        </div>
-
-        <h1>
-            Prajwal<br>
-            <span style="font-size:.55em">+</span><br>
-            Shravanii
-        </h1>
-
-        <p>
-            Not just a love story...
-            <br>
-            but our favorite story.
-        </p>
-
-        <div class="hero-date">
-            ✨ Together • Always • Forever ✨
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- MEMORIES -->
-
-<section id="memories">
-
-    <div class="section-kicker">
-        Little Moments
-    </div>
-
-    <h2 class="section-title">
-        Our Memories 📸
-    </h2>
-
-    <div class="photo-grid">
-
-        <div class="photo-card">
-            <div class="video-frame">
-                <video controls autoplay muted loop playsinline>
-                    <source src="WhatsApp Video 2026-10-13 at 11.36.01 PM.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-
-            <div class="photo-caption">
-                <h3>Where It All Began ❤️</h3>
-                <p>One moment that became a thousand memories.</p>
-            </div>
-
-        </div>
-
-
-        <div class="photo-card">
-
-            <img
-                src="WhatsApp Image 2026-10-14 at 11.19.43 AM.jpeg"
-                alt="Prajwal and Shravanii"
-            >
-
-            <div class="photo-caption">
-                <h3>Just You & Me 💕</h3>
-                <p>Our little world away from everyone else.</p>
-            </div>
-
-        </div>
-
-
-        <div class="photo-card">
-
-            <video controls autoplay muted loop playsinline>
-                <source src="video_2026-09-09_23-02-53.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-
-            <div class="photo-caption">
-                <h3>Your Smile ✨</h3>
-                <p>Still one of my favorite things in this world.</p>
-            </div>
-
-        </div>
-
-
-        <div class="photo-card">
-
-            <img
-                src="WhatsApp Image 2026-10-13 at 11.22.24 PM.jpeg"
-                alt="Prajwal and Shravanii"
-            >
-
-            <div class="photo-caption">
-                <h3>Our Adventures 🌎</h3>
-                <p>Everywhere is better when we're together.</p>
-            </div>
-
-        </div>
-
-
-        <div class="photo-card">
-
-            <img
-                src="photo_18_2026-09-09_22-35-42.jpg"
-                alt="Prajwal and Shravanii"
-            >
-
-            <div class="photo-caption">
-                <h3>Our Favorite Days 🌸</h3>
-                <p>The ordinary days that became extraordinary.</p>
-            </div>
-
-        </div>
-
-
-        <div class="photo-card">
-
-            <img
-                src="photo_2026-09-09_22-40-30.jpg"
-                alt="Prajwal and Shravanii"
-            >
-
-            <div class="photo-caption">
-                <h3>Still Us ♾️</h3>
-                <p>And we're only getting started.</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- STORY -->
-
-<section id="story">
-
-    <div class="section-kicker">
-        Chapter By Chapter
-    </div>
-
-    <h2 class="section-title">
-        Prajwal & Shravanii's Story 💫
-    </h2>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-
-            <span>CHAPTER 01</span>
-
-            <h3>The Beginning 🌸</h3>
-
-            <p>
-                Two people crossed paths and somehow,
-                the world became a little more beautiful.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <span>CHAPTER 02</span>
-
-            <h3>Getting Closer ❤️</h3>
-
-            <p>
-                Conversations became longer,
-                smiles became brighter,
-                and the little moments started meaning everything.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <span>CHAPTER 03</span>
-
-            <h3>Making Memories ✨</h3>
-
-            <p>
-                From random laughs to unforgettable adventures,
-                Prajwal and Shravanii began creating their own world.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <span>CHAPTER 04</span>
-
-            <h3>Still Choosing You ♾️</h3>
-
-            <p>
-                Because the best part isn't what happened yesterday.
-                It's everything that's still waiting for us tomorrow.
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- LETTER -->
-
-<section id="letter">
-
-    <div class="section-kicker">
-        From The Heart
-    </div>
-
-    <h2 class="section-title">
-        For Shravanii 💌
-    </h2>
-
-    <div class="letter">
-
-        <p>
-            Dear Shravanii,
-        </p>
-
-        <br>
-
-        <p>
-            Some people enter our lives quietly,
-            and then somehow become the most beautiful
-            part of our world.
-        </p>
-
-        <br>
-
-        <p>
-            You became one of those people for me.
-        </p>
-
-        <br>
-
-        <p>
-            Every smile, every conversation, every silly
-            moment and every memory with you has a place
-            in my heart.
-        </p>
-
-        <br>
-
-        <p>
-            I don't know what every tomorrow will look like,
-            but I know one thing:
-            I want more memories with you.
-        </p>
-
-        <br>
-
-        <p>
-            More laughs.
-            More adventures.
-            More random moments.
-            More us.
-        </p>
-
-        <br>
-
-        <p>
-            Because if this is our story,
-            I never want it to have a final chapter.
-        </p>
-
-        <div class="signature">
-            Forever yours,<br>
-            Prajwal ❤️
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- FINAL -->
-
-<section id="forever" class="final">
-
-    <div>
-
-        <div class="hero-heart">
-            ❤️
-        </div>
-
-        <h2>
-            Forever Us
-        </h2>
-
-        <div class="forever-names">
-            Prajwal ♾️ Shravanii
-        </div>
-
-        <p>
-            The best chapter of our story<br>
-            is the one we're still writing...
-        </p>
-
-    </div>
-
-</section>
-
-</div>
-
-
 <script>
+const pages = Array.from(document.querySelectorAll(".page"));
+const music = document.getElementById("music");
+let currentPage = 0;
+let missIndex = 0;
 
-/* =========================
-   ELEMENTS
-========================= */
-
-const heartButton =
-    document.getElementById("heartButton");
-
-const passwordBox =
-    document.getElementById("passwordBox");
-
-const passwordInput =
-    document.getElementById("passwordInput");
-
-const unlockButton =
-    document.getElementById("unlockButton");
-
-const errorMessage =
-    document.getElementById("errorMessage");
-
-const passwordCard =
-    document.getElementById("passwordCard");
-
-const lockScreen =
-    document.getElementById("lockScreen");
-
-const website =
-    document.getElementById("website");
-
-const unlockAnimation =
-    document.getElementById("unlockAnimation");
-
-
-/* =========================
-   HEART OPENS PASSWORD
-========================= */
-
-heartButton.addEventListener("click",function(){
-
-    passwordBox.style.display="flex";
-
-    setTimeout(function(){
-        passwordInput.focus();
-    },300);
-
-});
-
-
-/* =========================
-   CHECK PASSWORD
-========================= */
-
-function checkPassword(){
-
-    const password =
-        passwordInput.value.trim();
-
-    if(password === "2310"){
-
-        errorMessage.textContent =
-            "Welcome, Prajwal & Shravanii ❤️";
-
-        unlockAnimation.style.display="flex";
-
-        setTimeout(function(){
-
-            passwordBox.style.display="none";
-            lockScreen.style.display="none";
-
-            website.style.display="block";
-
-            unlockAnimation.style.display="none";
-
-            window.scrollTo(0,0);
-
-        },1400);
-
-    }else{
-
-        errorMessage.textContent =
-            "Not quite... think of the birthday 🎂";
-
-        passwordCard.classList.remove("shake");
-
-        void passwordCard.offsetWidth;
-
-        passwordCard.classList.add("shake");
-
-        passwordInput.value="";
-
-        passwordInput.focus();
-    }
-
+function goTo(pageNumber){
+  const nextIndex = Math.max(0, Math.min(pages.length - 1, pageNumber - 1));
+  pages[currentPage].classList.remove("active");
+  currentPage = nextIndex;
+  pages[currentPage].classList.add("active");
+  document.getElementById("nextButton").textContent =
+    currentPage === pages.length - 1 ? "Start Again ↻" : "Next 💗";
+  document.getElementById("progressFill").style.width =
+    ((currentPage + 1) / pages.length * 100) + "%";
 }
 
-
-/* =========================
-   UNLOCK BUTTON
-========================= */
-
-unlockButton.addEventListener(
-    "click",
-    checkPassword
-);
-
-
-/* =========================
-   ENTER KEY
-========================= */
-
-passwordInput.addEventListener(
-    "keydown",
-    function(event){
-
-        if(event.key === "Enter"){
-            checkPassword();
-        }
-
-    }
-);
-
-
-/* =========================
-   FLOATING HEARTS
-========================= */
-
-function createHeart(){
-
-    const heart =
-        document.createElement("div");
-
-    heart.className="floating-heart";
-
-    const symbols=[
-        "❤️",
-        "💕",
-        "💗",
-        "💖",
-        "✨"
-    ];
-
-    heart.innerHTML =
-        symbols[
-            Math.floor(Math.random()*symbols.length)
-        ];
-
-    heart.style.left =
-        Math.random()*100+"vw";
-
-    heart.style.fontSize =
-        (12+Math.random()*25)+"px";
-
-    heart.style.animationDuration =
-        (5+Math.random()*7)+"s";
-
-    document.body.appendChild(heart);
-
-    setTimeout(function(){
-        heart.remove();
-    },12000);
+function move(direction){
+  if(currentPage === pages.length - 1 && direction > 0){
+    goTo(1);
+    return;
+  }
+  goTo(currentPage + direction + 1);
 }
 
-setInterval(createHeart,700);
+function answerYes(){
+  document.getElementById("answerMessage").textContent =
+    "You just made this little universe smile. 💖";
+  for(let i = 0; i < 18; i++){
+    setTimeout(makeHeart, i * 100);
+  }
+}
+function showThink(){
+  document.getElementById("answerMessage").textContent =
+    "Take all the time you need. A real yes should always come from your heart. 💗";
+}
 
+/* Music works after a user taps the button.
+   Keep love-song.mp3 beside index.html. */
+async function toggleMusic(){
+  const status = document.getElementById("musicStatus");
+  const button = document.getElementById("musicButton");
+  if(music.paused){
+    try{
+      await music.play();
+      status.textContent = "♫ Music playing";
+      button.textContent = "♫ Pause Music";
+    }catch(error){
+      status.textContent = "Add love-song.mp3 beside index.html";
+      alert("Music file nahi mili. love-song.mp3 ko index.html ke same folder mein rakho.");
+    }
+  }else{
+    music.pause();
+    status.textContent = "♫ Music paused";
+    button.textContent = "♫ Music";
+  }
+}
 
-/* =========================
-   3D PHOTO EFFECT
-========================= */
+/* 100 individual notes */
+const notes = [
+"I miss your smile even when I have only just seen it.",
+"I wish I could pause time during our best moments.",
+"Your happiness matters to me, always.",
+"Some songs sound like memories of you.",
+"I hope today gives you a hundred reasons to smile.",
+"If hugs could travel, one would be arriving right now.",
+"You make little moments feel meaningful.",
+"I am cheering for you, even from far away.",
+"I wish I could bring you your favourite treat today.",
+"You deserve kindness on your hardest days.",
+"Distance cannot erase a beautiful memory.",
+"I hope you feel appreciated today.",
+"I admire your heart as much as your smile.",
+"Your dreams deserve all the space they need.",
+"I would choose one more conversation with you.",
+"Sending you a pocket-sized hug.",
+"I hope something lovely surprises you today.",
+"You make the world feel a little warmer.",
+"I miss the comfort of talking with you.",
+"Take a breath; you are doing better than you think.",
+"I hope you remember how much you matter.",
+"Some days need an extra-large virtual hug.",
+"I wish I could see your happy face right now.",
+"You make ordinary days feel a little special.",
+"I hope your favourite song plays at the perfect time.",
+"Sending a little sunshine your way.",
+"I miss our silly moments and random laughs.",
+"Your voice would make this moment sweeter.",
+"I hope you are taking good care of yourself.",
+"Here is one more reason to smile: you are wonderful.",
+"Imagine a warm hug wrapped in this message.",
+"I am wishing you a calm and beautiful evening.",
+"You deserve love that feels safe and respectful.",
+"I hope your next cup of tea or coffee tastes perfect.",
+"One tiny message, one very big hug.",
+"I hope your day is gentle with you.",
+"Your dreams are worth every little step.",
+"I wish I could share this peaceful moment with you.",
+"You have a lovely way of making moments memorable.",
+"Please remember to be kind to yourself.",
+"Sending you a smile without any special reason.",
+"I hope you get a little time just for yourself.",
+"Your laughter is a lovely thing to remember.",
+"May your worries feel lighter by tonight.",
+"I hope the moon reminds you to rest.",
+"I am rooting for every dream you chase.",
+"You deserve to feel seen and understood.",
+"Imagine our favourite song playing softly.",
+"I wish I could make your hard day easier.",
+"Here is a gentle reminder: you are enough.",
+"I miss the little details that make you you.",
+"I hope someone makes you laugh today.",
+"May your plans go smoothly and your heart feel light.",
+"One more virtual hug, delivered with love.",
+"I hope you find something beautiful in today.",
+"You can take life one small step at a time.",
+"Your peace is precious; protect it.",
+"I am sending good wishes for your next adventure.",
+"I hope you feel proud of how far you have come.",
+"You deserve patience, kindness, and honest words.",
+"Imagine the softest hug after a long day.",
+"I hope your favourite snack finds its way to you.",
+"May a tiny happy moment find you unexpectedly.",
+"I wish I could share a sunset with you.",
+"Keep believing in the beautiful things you are building.",
+"I hope tomorrow brings a fresh little beginning.",
+"You are allowed to rest without earning it.",
+"I hope you feel supported in the things you love.",
+"Sending a little sparkle to your ordinary day.",
+"I wish you a peaceful mind and a warm heart.",
+"May your next laugh be completely unstoppable.",
+"I hope your journey is full of kind people.",
+"Remember, even slow progress is still progress.",
+"I hope today leaves you with one sweet memory.",
+"You make the idea of a lovely future feel brighter.",
+"May your favourite melody find you at the right time.",
+"I wish I could share a quiet walk with you.",
+"Your kindness deserves to come back to you.",
+"I hope you get a reason to celebrate today.",
+"Sending a little courage for whatever comes next.",
+"You deserve a love that respects your whole self.",
+"May your heart feel lighter after a good rest.",
+"I hope your day contains more smiles than sighs.",
+"I wish you a sky full of peaceful thoughts.",
+"You are worth knowing, appreciating, and celebrating.",
+"I hope you remember your own strength today.",
+"Imagine a little bouquet arriving just for you. 🌷",
+"May the next chapter bring you lovely surprises.",
+"I hope your hard work gets the appreciation it deserves.",
+"Sending a quiet reminder that someone is cheering for you.",
+"May you always have room to grow into yourself.",
+"I hope your next adventure is full of wonder.",
+"You deserve conversations where you feel truly heard.",
+"I wish you a soft landing after a busy day.",
+"May every little win remind you to keep going.",
+"I hope you find beauty in an unexpected place.",
+"Sending you a hundred imaginary flower petals.",
+"May tomorrow bring new hope and a peaceful smile.",
+"No matter how busy life gets, I hope you feel cared for.",
+"One final note: you are special, exactly as you are. ❤️"
+];
 
-document.querySelectorAll(".photo-card")
-.forEach(function(card){
+function renderMiss(){
+  document.getElementById("missCount").textContent =
+    "NOTE " + (missIndex + 1) + " OF 100";
+  document.getElementById("missText").textContent = notes[missIndex];
+}
+function nextMiss(){
+  missIndex = (missIndex + 1) % notes.length;
+  renderMiss();
+  makeHeart();
+}
+async function copyMiss(){
+  const text = notes[missIndex];
+  try{
+    await navigator.clipboard.writeText(text);
+    alert("Little note copied 💗");
+  }catch(error){
+    window.prompt("Copy your note:", text);
+  }
+}
+function openSurprise(){
+  document.getElementById("surprise").style.display = "block";
+  for(let i = 0; i < 24; i++) setTimeout(makeHeart, i * 90);
+}
 
-    card.addEventListener(
-        "mousemove",
-        function(event){
+/* Floating hearts */
+function makeHeart(){
+  const heart = document.createElement("span");
+  heart.className = "heart";
+  heart.textContent = ["💗","💕","💖","🌸","✨","💞"][
+    Math.floor(Math.random() * 6)
+  ];
+  heart.style.left = Math.random() * 100 + "vw";
+  heart.style.fontSize = (15 + Math.random() * 23) + "px";
+  heart.style.animationDuration = (6 + Math.random() * 5) + "s";
+  document.body.appendChild(heart);
+  setTimeout(() => heart.remove(), 12000);
+}
+setInterval(makeHeart, 1100);
 
-            if(window.innerWidth<800)return;
+/* Starry sky */
+function addStars(container, count){
+  for(let i = 0; i < count; i++){
+    const star = document.createElement("span");
+    star.className = "star";
+    star.style.left = Math.random() * 100 + "%";
+    star.style.top = Math.random() * 100 + "%";
+    const size = 1 + Math.random() * 2.5;
+    star.style.width = size + "px";
+    star.style.height = size + "px";
+    star.style.animationDelay = Math.random() * 3 + "s";
+    star.style.animationDuration = (1.5 + Math.random() * 3) + "s";
+    container.appendChild(star);
+  }
+}
+addStars(document.getElementById("stars"), 115);
+addStars(document.getElementById("sceneStars"), 45);
 
-            const rect =
-                card.getBoundingClientRect();
-
-            const x =
-                event.clientX-rect.left;
-
-            const y =
-                event.clientY-rect.top;
-
-            const centerX =
-                rect.width/2;
-
-            const centerY =
-                rect.height/2;
-
-            const rotateX =
-                ((y-centerY)/centerY)*-5;
-
-            const rotateY =
-                ((x-centerX)/centerX)*5;
-
-            card.style.transform=
-                `perspective(800px)
-                 rotateX(${rotateX}deg)
-                 rotateY(${rotateY}deg)
-                 translateY(-12px)`;
-
-        }
-    );
-
-    card.addEventListener(
-        "mouseleave",
-        function(){
-            card.style.transform="";
-        }
-    );
-
+/* Keyboard navigation */
+document.addEventListener("keydown", event => {
+  if(event.key === "ArrowRight") move(1);
+  if(event.key === "ArrowLeft") move(-1);
 });
 
+renderMiss();
+document.getElementById("progressFill").style.width = (100 / pages.length) + "%";
 </script>
-
 </body>
 </html>
