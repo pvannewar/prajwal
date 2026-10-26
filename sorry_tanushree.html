@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#fff0f6">
+<title>I'm Sorry, Tanushree 💗</title>
+<style>
+:root{
+ --site-primary:#e75b98;
+ --site-on-primary:#ffffff;
+ --site-secondary:#f5d8e7;
+ --site-on-secondary:#69264d;
+ --site-background:#fff0f6;
+ --site-on-background:#69264d;
+ --site-font-body: ui-rounded, "Trebuchet MS", system-ui, sans-serif;
+ --site-font-heading: Georgia, "Times New Roman", serif;
+ --site-heading-scale:1;
+ --site-spacing-scale:1;
+ --site-radius-scale:1;
+ --site-decoration-opacity:1;
+ --ink:#69264d;
+ --muted:#95677f;
+ --paper:light-dark(#fffafd,#281b26);
+ --line:light-dark(#f3c5da,#624052);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--site-background);color:var(--site-on-background);font-family:var(--site-font-body)}
+#app{min-height:100vh;width:100%;border-radius:0;background-color:var(--site-background);color:var(--site-on-background);position:relative;overflow:hidden;isolation:isolate}
+.decor{position:absolute;inset:0;pointer-events:none;opacity:var(--site-decoration-opacity);z-index:-1;overflow:hidden}
+.glow{position:absolute;width:24rem;height:24rem;border-radius:50%;filter:blur(3px);background:var(--site-secondary);opacity:.55}
+.glow.one{top:-10rem;left:-9rem}.glow.two{right:-11rem;top:35rem;background:#e6d8ff}.glow.three{left:15%;bottom:-17rem;background:#ffd5e5}
+.petal{position:absolute;top:-35px;animation:drift linear forwards;opacity:.75}
+@keyframes drift{to{transform:translateY(110vh) rotate(300deg);opacity:0}}
+.topbar{position:relative;display:flex;align-items:center;justify-content:space-between;gap:1rem;max-width:1100px;margin:auto;padding:22px clamp(18px,5vw,56px);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.brand{font-weight:800;letter-spacing:.06em;color:var(--site-primary)}
+.pill{border:1px solid var(--line);border-radius:999px;padding:8px 12px;background:var(--paper);letter-spacing:.03em;text-transform:none}
+main{max-width:1100px;margin:auto;padding:0 clamp(16px,5vw,56px) 70px}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(24px,5vw,70px);align-items:center;min-height:78vh;padding:28px 0 55px}
+.eyebrow{color:var(--site-primary);font-size:.78rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+h1,h2,h3{font-family:var(--site-font-heading);font-weight:500;line-height:1.08;margin:14px 0;color:var(--ink)}
+h1{font-size:calc(clamp(3rem,7.5vw,6.3rem)*var(--site-heading-scale));letter-spacing:-.045em}
+h1 em{color:var(--site-primary);font-weight:400}
+h2{font-size:calc(clamp(2rem,4vw,3.2rem)*var(--site-heading-scale))}
+p{line-height:1.8;color:var(--muted)}
+.lead{font-size:clamp(1rem,1.7vw,1.18rem);max-width:580px}
+.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:25px}
+button{font:700 .95rem var(--site-font-body);border:0;border-radius:999px;padding:14px 20px;cursor:pointer;transition:transform .2s,box-shadow .2s,background .2s}
+button:hover{transform:translateY(-2px)}
+.primary{background:var(--site-primary);color:var(--site-on-primary);box-shadow:0 10px 24px #df5a9630}
+.secondary{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+button:focus-visible{outline:3px solid #a65bff;outline-offset:3px}
+.note{font-size:.8rem;margin-top:16px}
+.art{position:relative;min-height:430px;display:grid;place-items:center}
+.orbit{position:absolute;width:min(100%,420px);aspect-ratio:1;border:1px solid #eeb6d0;border-radius:50%;animation:rotate 32s linear infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px dashed #eeb6d0;border-radius:50%}
+.orbit:before{inset:22px}.orbit:after{inset:48px}
+@keyframes rotate{to{transform:rotate(360deg)}}
+.flower-bouquet{position:relative;width:300px;height:350px;display:grid;place-items:center;filter:drop-shadow(0 20px 22px #a04b7415)}
+.vase{position:absolute;bottom:4px;width:120px;height:120px;background:linear-gradient(100deg,#f8dce9,#fff8fc 48%,#eabdd3);clip-path:polygon(15% 0,85% 0,75% 100%,25% 100%);border-radius:10px;opacity:.95}
+.stems{position:absolute;bottom:90px;width:230px;height:220px}
+.stems path{fill:none;stroke:#58956b;stroke-width:4;stroke-linecap:round;stroke-dasharray:300;stroke-dashoffset:300;animation:grow 2s ease forwards}
+@keyframes grow{to{stroke-dashoffset:0}}
+.bloom{position:absolute;font-size:clamp(42px,7vw,65px);transform-origin:bottom center;animation:sway 3s ease-in-out infinite;filter:drop-shadow(0 5px 4px #f3a6ca55)}
+.b1{top:56px;left:48px;animation-delay:-.8s}.b2{top:13px;left:126px;animation-delay:-1.7s}.b3{top:66px;right:25px;animation-delay:-.3s}.b4{top:119px;left:111px;animation-delay:-1.1s}
+@keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(5deg)}}
+.sticker{position:absolute;padding:12px 15px;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:0 12px 30px #7e315414;font-size:.86rem;color:var(--ink)}
+.sticker.left{left:0;top:82px;transform:rotate(-7deg)}.sticker.right{right:0;bottom:56px;transform:rotate(6deg)}
+.section{padding:64px 0}
+.section-head{text-align:center;max-width:650px;margin:0 auto 28px}
+.letter-card{max-width:780px;margin:auto;padding:clamp(22px,5vw,48px);background:var(--paper);border:1px solid var(--line);border-radius:calc(30px*var(--site-radius-scale));box-shadow:0 20px 60px #8c276d12;position:relative}
+.letter-card:before{content:"✦";position:absolute;top:18px;right:24px;color:var(--site-primary);font-size:1.3rem}
+.letter-card p{color:var(--ink)}.signature{font-family:var(--site-font-heading);font-size:2rem;color:var(--site-primary);font-style:italic}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px}
+.little-card{padding:23px;background:var(--paper);border:1px solid var(--line);border-radius:calc(22px*var(--site-radius-scale));min-height:180px}
+.little-card .icon{font-size:2rem}.little-card h3{font-size:1.35rem;margin:13px 0 8px}.little-card p{font-size:.9rem;margin-bottom:0}
+.sky-card{background:var(--site-secondary);border-radius:calc(30px*var(--site-radius-scale));padding:clamp(24px,5vw,45px);display:grid;grid-template-columns:1fr auto;gap:20px;align-items:center}
+.sky-card p{color:var(--site-on-secondary)}.sky-icon{font-size:clamp(3rem,8vw,5.5rem);animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px) rotate(3deg)}}
+.final{text-align:center;max-width:750px;margin:auto;padding:55px 20px 30px}
+.final .big-heart{font-size:5rem;animation:heartbeat 1.5s infinite}
+@keyframes heartbeat{0%,100%{transform:scale(1)}15%{transform:scale(1.12)}30%{transform:scale(1)}}
+.hidden-message{display:none;margin:22px auto 0;max-width:600px;padding:25px;background:var(--paper);border:1px solid var(--line);border-radius:24px;animation:appear .5s ease}
+@keyframes appear{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+footer{text-align:center;padding:28px 16px 35px;font-size:.8rem;color:var(--muted)}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:25px;gap:4px;min-height:auto}.hero-copy{text-align:center}.hero-copy .lead{margin-inline:auto}.actions{justify-content:center}.art{min-height:365px}.flower-bouquet{transform:scale(.88)}.orbit{width:310px}.sticker.left{left:2%;top:45px}.sticker.right{right:0;bottom:25px}.grid{grid-template-columns:1fr}.little-card{min-height:auto}.sky-card{grid-template-columns:1fr;text-align:center}.sky-icon{grid-row:1}.topbar{padding-top:17px}.section{padding:42px 0}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="app" data-sites-preview-theme="custom">
+  <div class="decor" id="decor" aria-hidden="true"><div class="glow one"></div><div class="glow two"></div><div class="glow three"></div></div>
+  <nav class="topbar"><div class="brand">♡ A little page for you</div><div class="pill">Made with love, Tanushree</div></nav>
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-copy">
+        <div class="eyebrow">For the girl who means so much to me</div>
+        <h1>I'm sorry,<br><em>Tanushree.</em></h1>
+        <p class="lead">I know a few words can't instantly fix a hurt feeling, but I wanted to make you something that says what my heart has been trying to tell you.</p>
+        <p>I’m sorry for my part in what happened. You matter to me, and your feelings deserve to be heard—not brushed aside.</p>
+        <div class="actions"><button class="primary" onclick="document.getElementById('letter').scrollIntoView({behavior:'smooth'})">Read my little letter 💌</button><button class="secondary" onclick="sprinkleHearts(24)">Send a tiny hug 🫂</button></div>
+        <p class="note">No pressure to reply right away. Take all the time you need. 🤍</p>
+      </div>
+      <div class="art" aria-label="Four animated flowers growing together">
+        <div class="orbit"></div>
+        <div class="flower-bouquet">
+          <svg class="stems" viewBox="0 0 230 220" aria-hidden="true"><path d="M115 215 Q110 150 116 65"/><path d="M115 215 Q82 145 48 95"/><path d="M115 215 Q155 145 184 91"/><path d="M115 215 Q125 150 130 36"/><path d="M113 175 Q65 170 54 194 Q86 198 113 175"/><path d="M117 185 Q158 163 177 184 Q146 203 117 185"/></svg>
+          <div class="bloom b1">🌷</div><div class="bloom b2">🌸</div><div class="bloom b3">🌷</div><div class="bloom b4">🌸</div>
+          <div class="vase"></div>
+        </div>
+        <div class="sticker left">Dudu says: hug her 🧸</div><div class="sticker right">Bubu says: be gentle 💗</div>
+      </div>
+    </section>
+
+    <section class="section" id="letter">
+      <div class="section-head"><div class="eyebrow">A message from my heart</div><h2>Dear Tanushree…</h2><p>Not an excuse. Not a demand. Just an honest apology.</p></div>
+      <article class="letter-card">
+        <p>My sweetest Tanushree,</p>
+        <p>I’m truly sorry that I hurt you. I may not have handled things the way I should have, and I don’t want to pretend that a cute website can make everything okay. Your feelings matter to me, and I want to understand them properly.</p>
+        <p>You deserve patience, honesty, respect, and the kind of love that feels safe. I’m sorry for the moments when my words or actions didn’t make you feel that. I want to listen instead of getting defensive, understand instead of assuming, and show you through my actions that I mean what I say.</p>
+        <p>I know you have long days and flights to take care of, and I hope this little message brings even a tiny smile to your face. Please take care of yourself, my sky queen. I’m always wishing you safe flights, peaceful landings, and lighter days. ✈️🤍</p>
+        <p>I’m not asking you to forget what happened or forgive me before you’re ready. I just want you to know that I care about you, I’m sorry, and I’m willing to do better.</p>
+        <p>Whenever you feel ready, I’d like to listen to you—with an open heart.</p>
+        <p class="signature">I'm sorry, meri jaan. ❤️</p>
+        <p>— Someone who cares about you a lot</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div class="eyebrow">Little reminders</div><h2>What I want you to feel</h2><p>Not just today, but in the way I treat you from here on.</p></div>
+      <div class="grid">
+        <article class="little-card"><div class="icon">👂</div><h3>I'll listen</h3><p>Your feelings are important. I want to understand your side without interrupting or dismissing it.</p></article>
+        <article class="little-card"><div class="icon">🤍</div><h3>I'll respect you</h3><p>You deserve kindness, honesty, and space when you need it. I won't rush you to be okay.</p></article>
+        <article class="little-card"><div class="icon">🌱</div><h3>I'll do better</h3><p>An apology means more when actions change. I want to learn from this and be more thoughtful.</p></article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="sky-card"><div><div class="eyebrow">For my favourite sky queen</div><h2>Fly safe, smile softly. ✈️</h2><p>When work gets busy and the days feel long, I hope you remember that you deserve rest, care, and a little happiness too. No matter what, I’m wishing good things for you.</p></div><div class="sky-icon">☁️💗✈️</div></div>
+    </section>
+
+    <section class="final">
+      <div class="big-heart">💗</div>
+      <div class="eyebrow">One last little thing</div>
+      <h2>You matter to me, Tanushree.</h2>
+      <p>I can't change the past, but I can be more careful with the present. I'm sorry. Whenever you're ready, I'm here to listen.</p>
+      <button class="primary" onclick="revealMessage()">Open Dudu & Bubu's note 🧸</button>
+      <div class="hidden-message" id="hiddenMessage">
+        <div style="font-size:2.7rem">🧸💕🧸</div>
+        <h2 style="font-size:2rem">A tiny hug, just for you</h2>
+        <p>Dudu says, “You don't have to smile right now, but I hope one day soon you do.”</p>
+        <p>Bubu says, “Take your time, Tanushree. You deserve gentleness.”</p>
+        <p><strong>I'm sorry. No pressure, no rush. Just care. 🤍</strong></p>
+        <button class="secondary" onclick="sprinkleHearts(35)">A few floating hearts 💕</button>
+      </div>
+    </section>
+  </main>
+  <footer>Made gently, with a sincere apology and lots of pink hearts. ♡</footer>
+</div>
+<script>
+function sprinkleHearts(amount){
+  const symbols=['♡','💗','💕','🌸','✨','🤍'];
+  for(let i=0;i<amount;i++){
+    const item=document.createElement('span');
+    item.className='petal';
+    item.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+    item.style.left=(Math.random()*100)+'vw';
+    item.style.fontSize=(14+Math.random()*20)+'px';
+    item.style.animationDuration=(4+Math.random()*5)+'s';
+    item.style.animationDelay=(Math.random()*.8)+'s';
+    document.getElementById('decor').appendChild(item);
+    setTimeout(()=>item.remove(),11000);
+  }
+}
+function revealMessage(){
+  const note=document.getElementById('hiddenMessage');
+  note.style.display='block';
+  sprinkleHearts(28);
+  note.scrollIntoView({behavior:'smooth',block:'center'});
+}
+setInterval(()=>sprinkleHearts(1),1800);
+</script>
+</body>
+</html>
